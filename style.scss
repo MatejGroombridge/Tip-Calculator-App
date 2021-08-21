@@ -1,8 +1,113 @@
+:root {
+  --strong-cyan: hsl(172, 67%, 45%);
+  --very-dark-cyan: hsl(183, 100%, 15%);
+  --Dark-grayish-cyan: hsl(186, 14%, 43%);
+  --Medium-grayish-cyan: hsl(184, 14%, 56%);
+  --Light-grayish-cyan: hsl(185, 41%, 84%);
+  --Lighter-grayish-cyan: hsl(189, 41%, 97%);
+  --White: hsl(0, 0%, 100%);
+
+  --trans: 0.5s all;
+
+  --side: 30vw;
+}
+
+@import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
+
 .attribution {
   font-size: 11px;
   text-align: center;
 
   a {
     color: hsl(228, 45%, 44%);
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-size: 16px;
+  font-family: "Space Mono", monospace;
+}
+
+h4 {
+  font-size: 3em;
+  color: var(--strong-cyan);
+}
+
+p {
+  color: var(--Medium-grayish-cyan);
+  font-size: 14px;
+}
+
+body {
+  background: var(--Light-grayish-cyan);
+  color: var(--Dark-grayish-cyan);
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.logo-wrapper {
+  width: 50px;
+  position: absolute;
+  top: 0;
+  margin: 7em;
+}
+
+.content {
+  display: flex;
+  position: absolute;
+  background: var(--White);
+  border-radius: 1.5em;
+
+  .card {
+    height: var(--side);
+    width: var(--side);
+    margin: 2em;
+    padding: 1em;
+    border-radius: 1em;
+  }
+}
+
+.inputs {
+  background: var(--White);
+}
+
+.outputs {
+  background: var(--very-dark-cyan);
+  color: var(--White);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+  .cash-outputs {
+    display: flex;
+    flex-direction: column;
+
+    .block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5em 2em;
+    }
+  }
+
+  .reset-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5em;
+    padding: 0.5em 0;
+    border-radius: 5px;
+    color: var(--very-dark-cyan);
+    background: var(--strong-cyan);
+    font-weight: bold;
+    font-size: 18px;
+    opacity: 0.3;
+    cursor: pointer;
   }
 }

@@ -5,32 +5,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
   <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  Bill
-
-  Select Tip %
-  5%
-  10%
-  15%
-  25%
-  50%
-  Custom
-
-  Number of People
-
-  Tip Amount
-  / person
-
-  Total
-  / person
-
-  Reset
+  <div class="logo-wrapper">
+    <img class="logo" src="./images/logo.svg" alt="a logo that says splitter">
+  </div>
   
-  <div class="attribution">
+  <div class="content">
+    <div class="card inputs">
+
+      <div class="bill">
+        <div class="title-wrapper">
+          <h2> Bill </h2>
+        </div>
+        <div class="form-wrapper">
+          <input type="text" name="bill-value" id="bill-value" placeholder="0">
+          <img src="./images/icon-dollar.svg" alt="a dollar sign icon">
+        </div>
+      </div>
+
+      <div class="select-tip">
+        <div class="title-wrapper">
+          <h2> Select Tip % </h2>
+        </div>
+        <div class="btn-wrapper">
+          <button class="btn"> 5% </button>
+          <button class="btn"> 10% </button>
+          <button class="btn"> 15% </button>
+          <button class="btn"> 25% </button>
+          <button class="btn"> 50% </button>
+          <input type="text" name="custom-value" id="custom-value" placeholder="Custom">
+        </div>
+      </div>
+
+      <div class="num-of-people">
+        <div class="title-wrapper">
+          <h2>Number of People</h2>
+        </div>
+        <div class="form-wrapper">
+          <input type="text" name="people-value" id="people-value" placeholder="0">
+          <img src="./images/icon-person.svg" alt="an icon of a person's upper body">
+        </div>
+      </div>
+    </div>
+
+    <div class="card outputs">
+      <div class="cash-outputs">
+
+        <div class="block">
+          <div class="text">
+            <h2>Tip Amount</h2>
+            <p>/ person</p>
+          </div>
+          <div class="dollar-output">
+            <h4>$0.00</h4>
+          </div>
+        </div>
+
+        <div class="block">
+          <div class="text">
+            <h2>Total</h2>
+            <p>/ person</p>
+          </div>
+          <div class="dollar-output">
+            <h4>$0.00</h4>
+          </div>
+        </div>
+      </div>
+
+      <div class="reset-btn"> RESET </div>
+    </div>
+  </div>
+  
+  <!-- <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
-  </div>
+  </div> -->
 </body>
 </html>
