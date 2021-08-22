@@ -7,7 +7,6 @@
   --Light-grayish-cyan: hsl(185, 41%, 84%);
   --Lighter-grayish-cyan: hsl(189, 41%, 97%);
   --White: hsl(0, 0%, 100%);
-  --trans: 0.5s all;
   --side: 30vw;
 }
 
@@ -37,6 +36,25 @@ h4 {
 p {
   color: var(--Medium-grayish-cyan);
   font-size: 14px;
+}
+
+.form-wrapper input {
+  border: none;
+  background: var(--Lighter-grayish-cyan);
+  padding: 0.25em 1em;
+  margin: 0.5em 0;
+  color: var(--very-dark-cyan);
+  font-weight: 700;
+  font-size: 1.25em;
+  width: 100%;
+  border-radius: 5px;
+  text-align: right;
+  border: 2px solid var(--Lighter-grayish-cyan);
+}
+
+.form-wrapper input:focus {
+  outline: none;
+  border: 2px solid var(--strong-cyan);
 }
 
 body {
@@ -74,6 +92,8 @@ body {
 .content .card {
   height: var(--side);
   width: var(--side);
+  min-height: 350px;
+  min-width: 350px;
   margin: 2em;
   padding: 1em;
   border-radius: 1em;
@@ -81,6 +101,104 @@ body {
 
 .inputs {
   background: var(--White);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  position: relative;
+}
+
+.inputs .img-wrapper {
+  position: absolute;
+}
+
+.inputs .img-wrapper img {
+  position: relative;
+  top: -2.5em;
+  left: 1em;
+}
+
+.inputs .select-tip .btn-wrapper {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 1fr 1fr 1fr;
+      grid-template-columns: 1fr 1fr 1fr;
+  -ms-grid-rows: 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+  gap: 1em;
+  padding: 1em 0;
+}
+
+.inputs .select-tip .btn-wrapper .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border-radius: 5px;
+  color: var(--White);
+  background-color: var(--very-dark-cyan);
+  font-size: 20px;
+  font-weight: 700;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0.5em;
+}
+
+.inputs .select-tip .btn-wrapper .select:hover {
+  background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.inputs .select-tip .btn-wrapper .nope {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  border: none;
+  background: var(--Lighter-grayish-cyan);
+  color: var(--very-dark-cyan);
+  font-weight: 700;
+  font-size: 1.25em;
+  border-radius: 5px;
+  text-align: right;
+  padding: 0 1em;
+  margin: 0;
+  width: 100%;
+}
+
+.inputs .select-tip .btn-wrapper .nope:focus {
+  outline: none;
+  border: 2px solid var(--strong-cyan);
+}
+
+.inputs .title-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.inputs .title-wrapper .error-msg {
+  text-align: right;
+}
+
+.inputs .title-wrapper .error-msg p {
+  color: red;
+}
+
+.inputs .error input:focus {
+  outline: none;
+  border: 2px solid red;
 }
 
 .outputs {
@@ -140,5 +258,9 @@ body {
   font-size: 18px;
   opacity: 0.3;
   cursor: pointer;
+}
+
+.outputs .reset-btn:hover {
+  opacity: 1;
 }
 /*# sourceMappingURL=style.css.map */

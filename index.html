@@ -14,37 +14,43 @@
   
   <div class="content">
     <div class="card inputs">
-
-      <div class="bill">
+      <div class="section bill">
         <div class="title-wrapper">
           <h2> Bill </h2>
         </div>
         <div class="form-wrapper">
           <input type="text" name="bill-value" id="bill-value" placeholder="0">
+        </div>
+        <div class="img-wrapper">
           <img src="./images/icon-dollar.svg" alt="a dollar sign icon">
         </div>
       </div>
 
-      <div class="select-tip">
+      <div class="section select-tip">
         <div class="title-wrapper">
           <h2> Select Tip % </h2>
         </div>
         <div class="btn-wrapper">
-          <button class="btn"> 5% </button>
-          <button class="btn"> 10% </button>
-          <button class="btn"> 15% </button>
-          <button class="btn"> 25% </button>
-          <button class="btn"> 50% </button>
-          <input type="text" name="custom-value" id="custom-value" placeholder="Custom">
+          <div class="btn select">5%</div>
+          <div class="btn select">10%</div>
+          <div class="btn select">15%</div>
+          <div class="btn select">25%</div>
+          <div class="btn select">50%</div>
+          <input class="btn nope" type="text" name="custom-value" id="custom-value" placeholder="Custom">
         </div>
       </div>
 
-      <div class="num-of-people">
+      <div class="section num-of-people">
         <div class="title-wrapper">
           <h2>Number of People</h2>
+          <div class="error-msg">
+            <p>Can't be zero</p>
+          </div>
         </div>
-        <div class="form-wrapper">
+        <div class="form-wrapper error">
           <input type="text" name="people-value" id="people-value" placeholder="0">
+        </div>
+        <div class="img-wrapper">
           <img src="./images/icon-person.svg" alt="an icon of a person's upper body">
         </div>
       </div>

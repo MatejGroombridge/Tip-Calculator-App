@@ -7,8 +7,6 @@
   --Lighter-grayish-cyan: hsl(189, 41%, 97%);
   --White: hsl(0, 0%, 100%);
 
-  --trans: 0.5s all;
-
   --side: 30vw;
 }
 
@@ -41,6 +39,27 @@ p {
   font-size: 14px;
 }
 
+.form-wrapper {
+  input {
+    border: none;
+    background: var(--Lighter-grayish-cyan);
+    padding: 0.25em 1em;
+    margin: 0.5em 0;
+    color: var(--very-dark-cyan);
+    font-weight: 700;
+    font-size: 1.25em;
+    width: 100%;
+    border-radius: 5px;
+    text-align: right;
+    border: 2px solid var(--Lighter-grayish-cyan);
+  }
+
+  input:focus {
+    outline: none;
+    border: 2px solid var(--strong-cyan);
+  }
+}
+
 body {
   background: var(--Light-grayish-cyan);
   color: var(--Dark-grayish-cyan);
@@ -67,6 +86,10 @@ body {
   .card {
     height: var(--side);
     width: var(--side);
+    min-height: 350px;
+    min-width: 350px;
+    max-height: 500px;
+    max-width: 500px;
     margin: 2em;
     padding: 1em;
     border-radius: 1em;
@@ -75,6 +98,84 @@ body {
 
 .inputs {
   background: var(--White);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  .img-wrapper {
+    position: absolute;
+
+    img {
+      position: relative;
+      top: -2.5em;
+      left: 1em;
+    }
+  }
+
+  .select-tip {
+    .btn-wrapper {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1em;
+      padding: 1em 0;
+
+      .btn {
+        display: flex;
+        border-radius: 5px;
+        color: var(--White);
+        background-color: var(--very-dark-cyan);
+        font-size: 20px;
+        font-weight: 700;
+        justify-content: center;
+        align-items: center;
+        padding: 0.5em;
+      }
+
+      .select:hover {
+        background: var(--strong-cyan);
+        color: var(--very-dark-cyan);
+      }
+
+      .nope {
+        display: flex;
+        border: none;
+        background: var(--Lighter-grayish-cyan);
+        color: var(--very-dark-cyan);
+        font-weight: 700;
+        font-size: 1.25em;
+        border-radius: 5px;
+        text-align: right;
+        padding: 0 1em;
+        margin: 0;
+        width: 100%;
+      }
+
+      .nope:focus {
+        outline: none;
+        border: 2px solid var(--strong-cyan);
+      }
+    }
+  }
+
+  .title-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    .error-msg {
+      text-align: right;
+
+      p {
+        color: red;
+      }
+    }
+  }
+
+  .error input:focus {
+    outline: none;
+    border: 2px solid red;
+  }
 }
 
 .outputs {
@@ -109,5 +210,9 @@ body {
     font-size: 18px;
     opacity: 0.3;
     cursor: pointer;
+  }
+
+  .reset-btn:hover {
+    opacity: 1;
   }
 }
