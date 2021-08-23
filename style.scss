@@ -8,6 +8,7 @@
   --White: hsl(0, 0%, 100%);
 
   --side: 30vw;
+  --side-mobile: 80vw;
 }
 
 @import url("https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap");
@@ -65,32 +66,53 @@ body {
   color: var(--Dark-grayish-cyan);
   height: 100vh;
   width: 100vw;
+
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  justify-content: space-evenly;
   align-items: center;
 }
 
 .logo-wrapper {
   width: 50px;
-  position: absolute;
-  top: 0;
-  margin: 7em;
+  position: relative;
+  margin: 2em;
+}
+
+.empty {
+  height: 30px;
+  position: relative;
+  margin: 2em;
 }
 
 .content {
   display: flex;
-  position: absolute;
+  position: relative;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 1em;
+
   background: var(--White);
+  padding: 2em;
   border-radius: 1.5em;
+  width: 64%;
+
+  min-height: 400px;
+  min-width: 800px;
+  // max-height: 800px; //fix this on mac
+  // max-width: 1000px; //fix this on mac
 
   .card {
-    height: var(--side);
-    width: var(--side);
-    min-height: 350px;
-    min-width: 350px;
-    max-height: 500px;
-    max-width: 500px;
-    margin: 2em;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+
+    width: 100%;
+    height: 100%;
+
+    // margin: 2em;
     padding: 1em;
     border-radius: 1em;
   }
@@ -98,10 +120,6 @@ body {
 
 .inputs {
   background: var(--White);
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  position: relative;
 
   .img-wrapper {
     position: absolute;
@@ -214,5 +232,77 @@ body {
 
   .reset-btn:hover {
     opacity: 1;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    height: 109vh;
+
+    .empty {
+      display: none;
+    }
+  }
+
+  // .block {
+  //   outline: 2px solid red;
+  //   justify-content: space-between;
+  //   padding: 1em;
+  // }
+
+  h4 {
+    font-size: 2em;
+    color: var(--strong-cyan);
+  }
+
+  .content {
+    flex-direction: column;
+    width: 100%;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    gap: 0;
+    padding: 1.5em;
+
+    min-height: 0;
+    min-width: 0;
+    // max-height: 800px; //fix this on mac
+    // max-width: 1000px; //fix this on mac
+
+    margin: 0;
+
+    .card {
+      width: 100%;
+      margin: 0;
+      padding: 1em;
+      border-radius: 1em;
+    }
+
+    .section {
+      margin: 0.25em 0;
+      // outline: 2px solid red;
+    }
+
+    .inputs {
+      .select-tip {
+        .btn-wrapper {
+          grid-template-columns: 1fr 1fr;
+          grid-template-rows: 1fr 1fr 1fr;
+        }
+      }
+    }
+
+    .outputs {
+      gap: 1em;
+    }
+
+    .outputs .cash-outputs {
+      .block {
+        padding: 0.5em 1em;
+      }
+    }
+
+    .reset-btn {
+      margin: 0.5em 0.5em;
+    }
   }
 }
