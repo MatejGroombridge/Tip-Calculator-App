@@ -58,6 +58,16 @@ p {
   border: 2px solid var(--strong-cyan);
 }
 
+.form-wrapper .show-error-msg {
+  outline: none;
+  border: 2px solid red;
+}
+
+.form-wrapper .show-error-msg:focus {
+  outline: none;
+  border: 2px solid red;
+}
+
 body {
   background: var(--Light-grayish-cyan);
   color: var(--Dark-grayish-cyan);
@@ -78,8 +88,12 @@ body {
           align-items: center;
 }
 
+.attribution {
+  display: none;
+}
+
 .logo-wrapper {
-  width: 50px;
+  width: 87px;
   position: relative;
   margin: 2em;
 }
@@ -107,6 +121,8 @@ body {
           align-items: center;
   gap: 1em;
   background: var(--White);
+  -webkit-box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05), 0px 10px 20px rgba(0, 0, 0, 0.05);
+          box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.05), 0px 10px 20px rgba(0, 0, 0, 0.05);
   padding: 2em;
   border-radius: 1.5em;
   width: 64%;
@@ -173,10 +189,18 @@ body {
       -ms-flex-align: center;
           align-items: center;
   padding: 0.5em;
+  cursor: pointer;
 }
 
-.inputs .select-tip .btn-wrapper .select:hover {
+.inputs .select-tip .btn-wrapper .btn-active {
   background: var(--strong-cyan);
+  color: var(--very-dark-cyan);
+}
+
+.inputs .select-tip .btn-wrapper .tip:hover {
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  background: var(--Light-grayish-cyan);
   color: var(--very-dark-cyan);
 }
 
@@ -201,7 +225,7 @@ body {
   border: 2px solid var(--strong-cyan);
 }
 
-.inputs .title-wrapper {
+.inputs .num-of-people .title-wrapper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -210,17 +234,19 @@ body {
           justify-content: space-between;
 }
 
-.inputs .title-wrapper .error-msg {
+.inputs .num-of-people .title-wrapper .error-msg {
   text-align: right;
+  opacity: 0;
 }
 
-.inputs .title-wrapper .error-msg p {
+.inputs .num-of-people .title-wrapper .error-msg p {
   color: red;
 }
 
-.inputs .error input:focus {
-  outline: none;
-  border: 2px solid red;
+.inputs .num-of-people .title-wrapper .show-error-msg {
+  -webkit-transition: opacity 1s ease-in-out;
+  transition: opacity 1s ease-in-out;
+  opacity: 1;
 }
 
 .outputs {
@@ -261,6 +287,10 @@ body {
   padding: 0.5em 2em;
 }
 
+.outputs .cash-outputs .block .text {
+  margin-right: 2em;
+}
+
 .outputs .reset-btn {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -278,12 +308,18 @@ body {
   background: var(--strong-cyan);
   font-weight: bold;
   font-size: 18px;
-  opacity: 0.3;
   cursor: pointer;
+  opacity: 0.3;
+}
+
+.outputs .button-active {
+  opacity: 1;
 }
 
 .outputs .reset-btn:hover {
-  opacity: 1;
+  -webkit-transition: 0.2s all;
+  transition: 0.2s all;
+  background: var(--Light-grayish-cyan);
 }
 
 @media screen and (max-width: 768px) {

@@ -59,6 +59,16 @@ p {
     outline: none;
     border: 2px solid var(--strong-cyan);
   }
+
+  .show-error-msg {
+    outline: none;
+    border: 2px solid red;
+  }
+
+  .show-error-msg:focus {
+    outline: none;
+    border: 2px solid red;
+  }
 }
 
 body {
@@ -73,8 +83,12 @@ body {
   align-items: center;
 }
 
+.attribution {
+  display: none;
+}
+
 .logo-wrapper {
-  width: 50px;
+  width: 87px;
   position: relative;
   margin: 2em;
 }
@@ -94,6 +108,8 @@ body {
   gap: 1em;
 
   background: var(--White);
+  box-shadow: 0px 10px 20px rgba($color: #000000, $alpha: 0.05),
+    0px 10px 20px rgba($color: #000000, $alpha: 0.05);
   padding: 2em;
   border-radius: 1.5em;
   width: 64%;
@@ -112,7 +128,6 @@ body {
     width: 100%;
     height: 100%;
 
-    // margin: 2em;
     padding: 1em;
     border-radius: 1em;
   }
@@ -149,10 +164,17 @@ body {
         justify-content: center;
         align-items: center;
         padding: 0.5em;
+        cursor: pointer;
       }
 
-      .select:hover {
+      .btn-active {
         background: var(--strong-cyan);
+        color: var(--very-dark-cyan);
+      }
+
+      .tip:hover {
+        transition: 0.2s all;
+        background: var(--Light-grayish-cyan);
         color: var(--very-dark-cyan);
       }
 
@@ -177,22 +199,24 @@ body {
     }
   }
 
-  .title-wrapper {
-    display: flex;
-    justify-content: space-between;
+  .num-of-people {
+    .title-wrapper {
+      display: flex;
+      justify-content: space-between;
 
-    .error-msg {
-      text-align: right;
+      .error-msg {
+        text-align: right;
+        p {
+          color: red;
+        }
+        opacity: 0;
+      }
 
-      p {
-        color: red;
+      .show-error-msg {
+        transition: opacity 1s ease-in-out;
+        opacity: 1;
       }
     }
-  }
-
-  .error input:focus {
-    outline: none;
-    border: 2px solid red;
   }
 }
 
@@ -212,6 +236,10 @@ body {
       justify-content: space-between;
       align-items: center;
       padding: 0.5em 2em;
+
+      .text {
+        margin-right: 2em;
+      }
     }
   }
 
@@ -226,12 +254,17 @@ body {
     background: var(--strong-cyan);
     font-weight: bold;
     font-size: 18px;
-    opacity: 0.3;
     cursor: pointer;
+    opacity: 0.3;
+  }
+
+  .button-active {
+    opacity: 1;
   }
 
   .reset-btn:hover {
-    opacity: 1;
+    transition: 0.2s all;
+    background: var(--Light-grayish-cyan);
   }
 }
 
@@ -243,12 +276,6 @@ body {
       display: none;
     }
   }
-
-  // .block {
-  //   outline: 2px solid red;
-  //   justify-content: space-between;
-  //   padding: 1em;
-  // }
 
   h4 {
     font-size: 2em;

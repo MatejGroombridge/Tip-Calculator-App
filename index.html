@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/logo.svg">
+  <title>Tip Calculator App</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,7 +19,7 @@
           <h2> Bill </h2>
         </div>
         <div class="form-wrapper">
-          <input type="text" name="bill-value" id="bill-value" placeholder="0">
+          <input maxlength="8" type="text" name="bill-value" id="bill-value" placeholder="0">
         </div>
         <div class="img-wrapper">
           <img src="./images/icon-dollar.svg" alt="a dollar sign icon">
@@ -31,12 +31,12 @@
           <h2> Select Tip % </h2>
         </div>
         <div class="btn-wrapper">
-          <div class="btn select">5%</div>
-          <div class="btn select">10%</div>
-          <div class="btn select">15%</div>
-          <div class="btn select">25%</div>
-          <div class="btn select">50%</div>
-          <input class="btn nope" type="text" name="custom-value" id="custom-value" placeholder="Custom">
+          <div class="btn tip">5%</div>
+          <div class="btn tip">10%</div>
+          <div class="btn tip btn-active">15%</div>
+          <div class="btn tip">25%</div>
+          <div class="btn tip">50%</div>
+          <input maxlength="2" class="btn nope" type="text" name="custom-value" id="inp-tip" placeholder="Custom">
         </div>
       </div>
 
@@ -47,8 +47,8 @@
             <p>Can't be zero</p>
           </div>
         </div>
-        <div class="form-wrapper error">
-          <input type="text" name="people-value" id="people-value" placeholder="0">
+        <div class="form-wrapper">
+          <input maxlength="8" class="error-msg" type="text" name="people-value" id="inp-people" placeholder="0">
         </div>
         <div class="img-wrapper">
           <img src="./images/icon-person.svg" alt="an icon of a person's upper body">
@@ -64,8 +64,8 @@
             <h2>Tip Amount</h2>
             <p>/ person</p>
           </div>
-          <div class="dollar-output">
-            <h4>$0.00</h4>
+          <div>
+            <h4 class="dollar-output">$0.00</h4>
           </div>
         </div>
 
@@ -74,8 +74,8 @@
             <h2>Total</h2>
             <p>/ person</p>
           </div>
-          <div class="dollar-output">
-            <h4>$0.00</h4>
+          <div>
+            <h4 class="dollar-output">$0.00</h4>
           </div>
         </div>
       </div>
@@ -84,11 +84,13 @@
     </div>
   </div>
 
-  <div class="empty">Coded by Matej Groombridge</div>
+  <div class="empty"></div>
   
-  <!-- <div class="attribution">
+  <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Your Name Here</a>.
-  </div> -->
+    Coded by <a href="#">Matej Groombridge</a>.
+  </div>
+
+  <script src="./app.js"></script>
 </body>
 </html>
