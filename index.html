@@ -4,93 +4,57 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="icon" type="image/png" sizes="32x32" href="./images/logo.svg">
-  <title>Tip Calculator App</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Calculator App</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
+
 <body>
-  <div class="logo-wrapper">
-    <img class="logo" src="./images/logo.svg" alt="a logo that says splitter">
-  </div>
-  
-  <div class="content">
-    <div class="card inputs">
-      <div class="section bill">
-        <div class="title-wrapper">
-          <h2> Bill </h2>
-        </div>
-        <div class="form-wrapper">
-          <input maxlength="8" type="text" name="bill-value" id="bill-value" placeholder="0">
-        </div>
-        <div class="img-wrapper">
-          <img src="./images/icon-dollar.svg" alt="a dollar sign icon">
-        </div>
-      </div>
+  <header>
+    <div class="logo">
+      <h1>Calculator</h1>
+    </div>
+    <!-- <nav class="nav-links">
+      <ul>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Contribute</a></li>
+      </ul>
+    </nav> -->
+  </header>
 
-      <div class="section select-tip">
-        <div class="title-wrapper">
-          <h2> Select Tip % </h2>
-        </div>
-        <div class="btn-wrapper">
-          <div class="btn tip">5%</div>
-          <div class="btn tip">10%</div>
-          <div class="btn tip btn-active">15%</div>
-          <div class="btn tip">25%</div>
-          <div class="btn tip">50%</div>
-          <input maxlength="2" class="btn nope" type="text" name="custom-value" id="inp-tip" placeholder="Custom">
-        </div>
+  <section class="wrapper">
+    <div class="background">
+      <div class="screen">
+        <h2 data-previous-operand></h2>
+        <h2 data-current-operand class="left"></h2>
       </div>
-
-      <div class="section num-of-people">
-        <div class="title-wrapper">
-          <h2>Number of People</h2>
-          <div class="error-msg">
-            <p>Can't be zero</p>
-          </div>
-        </div>
-        <div class="form-wrapper">
-          <input maxlength="8" class="error-msg" type="text" name="people-value" id="inp-people" placeholder="0">
-        </div>
-        <div class="img-wrapper">
-          <img src="./images/icon-person.svg" alt="an icon of a person's upper body">
-        </div>
+      <div class="buttons">
+        <button data-number class="btn">0</button>
+        <button data-delete class="btn special-btn del">DEL</button>
+        <button data-clear class="btn special-btn clears">AC</button>
+        <button data-number class="btn">9</button>
+        <button data-number class="btn">8</button>
+        <button data-number class="btn active-btn">7</button>
+        <button data-number class="btn">6</button>
+        <button data-number class="btn">5</button>
+        <button data-number class="btn">4</button>
+        <button data-number class="btn">3</button>
+        <button data-number class="btn">2</button>
+        <button data-number class="btn">1</button>
+        <button data-number class="btn special-btn">(</button>
+        <button data-operation class="btn special-btn">x</button>
+        <button data-operation class="btn special-btn">+</button>
+        <button data-number class="btn special-btn">)</button>
+        <button data-operation class="btn special-btn">÷</button>
+        <button data-operation class="btn special-btn">-</button>
+        <button class="btn special-btn">YOLO</button>
+        <button data-number class="btn special-btn">.</button>
+        <button data-equals class="btn special-btn">=</button>
       </div>
     </div>
+  </section>
 
-    <div class="card outputs">
-      <div class="cash-outputs">
+  <!-- <div class="empty"> Coded by Matej Groombridge, 2021 </div> -->
 
-        <div class="block">
-          <div class="text">
-            <h2>Tip Amount</h2>
-            <p>/ person</p>
-          </div>
-          <div>
-            <h4 class="dollar-output">$0.00</h4>
-          </div>
-        </div>
-
-        <div class="block">
-          <div class="text">
-            <h2>Total</h2>
-            <p>/ person</p>
-          </div>
-          <div>
-            <h4 class="dollar-output">$0.00</h4>
-          </div>
-        </div>
-      </div>
-
-      <div class="reset-btn"> RESET </div>
-    </div>
-  </div>
-
-  <div class="empty"> Coded by Matej Groombridge, 2021 </div>
-  
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-    Coded by <a href="#">Matej Groombridge</a>.
-  </div>
-
-  <script src="./app.js"></script>
+  <script src="js/app.js"></script>
 </body>
 </html>

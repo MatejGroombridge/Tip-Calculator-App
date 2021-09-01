@@ -1,0 +1,95 @@
+@import "./variables";
+
+h1 {
+  font-size: 24px;
+  font-weight: 700;
+  font-family: "Poppins", monospace;
+  color: var(--highlight);
+}
+
+h2 {
+  font-size: 1.3em;
+  font-weight: 700;
+  color: var(--dark);
+}
+
+h3 {
+  font-size: 1.5em;
+  color: var(--primary);
+}
+
+p {
+  font-size: 14px;
+  // color: var(--medium-dark);
+  color: var(--dark);
+}
+
+input {
+  border: none;
+  background: var(--light);
+  color: var(--secondary);
+
+  padding: 0.25em 1em;
+  margin: 0.5em 0;
+  width: 100%;
+  border-radius: 5px;
+  text-align: right;
+
+  font-size: 18px;
+  font-weight: 700;
+
+  border: 2px solid var(--light);
+}
+
+input:focus {
+  outline: none;
+  border: 2px solid var(--primary);
+}
+
+select {
+  border: none;
+  background: var(--light);
+  color: var(--secondary);
+
+  padding: 0.25em 1em;
+  margin: 0.5em 0;
+  width: 100%;
+  border-radius: 5px;
+  text-align: right;
+
+  font-size: 16px;
+  font-weight: 700;
+
+  border: 2px solid var(--light);
+}
+
+.btn {
+  display: flex;
+  border-radius: 0.5em;
+  background-color: var(--secondary);
+  justify-content: center;
+  align-items: center;
+  padding: 0.5em;
+  cursor: pointer;
+  font-size: 1.5em;
+  color: var(--white);
+  border: none;
+}
+
+.btn:hover {
+  background: var(--medium-light);
+  color: var(--secondary);
+}
+
+.special-btn {
+  background: var(--medium-dark);
+  color: var(--white);
+}
+
+.active-btn {
+  background: var(--highlight);
+
+  h3 {
+    color: var(--primary);
+  }
+}
